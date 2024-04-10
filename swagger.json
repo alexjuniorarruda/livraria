@@ -1,0 +1,636 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "API de cadastro de livros",
+        "description": "Essa API tem por finalidade realizar cadastros de livros",
+        "termsOfService": "",
+        "contact": {
+            "email": "alex.j.arruda@hotmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "API de produção"
+        }
+    ],
+    "paths": {
+        "/assuntos": {
+            "post": {
+                "summary": "Cadastrar Assunto",
+                "description": "Essa rota é responsável por cadastrar um assunto para posteriormente ser referênciado no cadastro de livros",
+                "tags": [
+                    "Assuntos"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Assunto"
+                            },
+                            "examples": {
+                                "assunto": {
+                                    "value": {
+                                        "descricao": "JavaScript"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Criado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Assunto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todos os assuntos",
+                "description": "Responsável por trazer todos os assuntos cadastrados",
+                "tags": [
+                    "Assuntos"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Assunto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/assuntos/{id}": {
+            "get": {
+                "summary": "Buscar Assunto por Id",
+                "description": "Busca o Assunto pelo Id",
+                "tags": [
+                    "Assuntos"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Assunto",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Assunto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "put": {
+                "description": "Atualizar Assunto",
+                "summary": "Atualiza Assunto através do Id",
+                "tags": [
+                    "Assuntos"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Assunto",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Assunto"
+                            },
+                            "examples": {
+                                "assunto": {
+                                    "value": {
+                                        "descricao": "Literatura Brasileira"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Assunto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletar Assunto pelo Id",
+                "summary": "Deleta o Assunto através do Id",
+                "tags": [
+                    "Assuntos"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Assunto",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Assunto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/autores": {
+            "post": {
+                "summary": "Cadastrar Autor",
+                "description": "Cadastra Autor para referenciar no cadastro do Livro",                
+                "tags": [
+                    "Autores"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Autor"
+                            },
+                            "examples": {
+                                "autor": {
+                                    "value": {
+                                        "nome": "Loiane Groner"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Criado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Autor"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todos os Autores",
+                "description": "Faz uma consulta no banco e retorna todos os Autores Cadastrados",                
+                "tags": [
+                    "Autores"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Autor"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/autores/{id}": {
+            "get": {
+                "summary": "Buscar autor por Id",
+                "description": "Buca o Autor pelo Id",                
+                "tags": [
+                    "Autores"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Autor",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Autor"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Atualizar Autor",
+                "description": "Atualizar o Autor por Id",                
+                "tags": [
+                    "Autores"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Autor",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Autor"
+                            },
+                            "examples": {
+                                "assunto": {
+                                    "value": {
+                                        "nome": "Machado de Assis"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Autor"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Excluir Autor",
+                "description": "Exclui o Autor através do Id",                
+                "tags": [
+                    "Autores"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Autor",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Autor"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/livros": {
+            "post": {
+                "summary": "Cadastrar Livro",
+                "description": "Realiza o cadastro de Livros",                
+                "tags": [
+                    "Livros"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Livro"
+                            },
+                            "examples": {
+                                "livro": {
+                                    "value": {
+                                        "titulo": "Estruturas de Dados e Algoritmos com JavaScript",
+                                        "isbn": "978-8575226933",
+                                        "preco_unitario": 92.70,
+                                        "assunto": [
+                                            "1"
+                                        ],
+                                        "autor": [
+                                            "1"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Criado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Livro"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todos os Livros",
+                "description": "Busca todos os Livros cadastrados no banco",                
+                "tags": [
+                    "Livros"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Livro"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/livros/{id}": {
+            "get": {
+                "summary": "Buscar Livro por Id",
+                "description": "Faz a busca do Livro atrvés do Id",                
+                "tags": [
+                    "Livros"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Livro",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Livro"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Atualizar Livro",
+                "description": "Atualiza o Livro através do Id",                
+                "tags": [
+                    "Livros"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Livro",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Livro"
+                            },
+                            "examples": {
+                                "livro": {
+                                    "value": {
+                                        "titulo": "Teste Livro Doc",
+                                        "isbn": "asdcfvgtr",
+                                        "preco_unitario": 15.50,
+                                        "assunto": [
+                                            "1",
+                                            "2"
+                                        ],
+                                        "autor": [
+                                            "1",
+                                            "2"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Livro"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Excluir Livro",
+                "description": "Exclui o Livro através do Id",                
+                "tags": [
+                    "Livros"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Livro",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Livro"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Assunto": {
+                "type": "object",
+                "properties": {
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Autor": {
+                "type": "object",
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Livro": {
+                "type": "object",
+                "properties": {
+                    "titulo": {
+                        "type": "string"
+                    },
+                    "isbn": {
+                        "type": "string"
+                    },
+                    "preco_unitario": {
+                        "type": "string"
+                    },
+                    "assunto": {
+                        "type": "array"
+                    },
+                    "autor": {
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    }
+}
