@@ -51,6 +51,36 @@ npx sequelize-cli db:create
 npm start
 ```
 
+## 📌 Rotas
+
+- Visão geral de toda a documentação
+
+![Doc Resumido](https://github.com/alexjuniorarruda/livraria/assets/112874423/80a63e5e-b41c-4dfa-af9b-5c3c87f366c4)
+
+A aplicação possui três rotas, **assuntos**, **autores** e **livros**. Para cadastrar o livros precisamos de pelo menos um assunto e um autor cadastrado.
+Se trata de uma relação **Many-to-Many**, onde um livro pode ter um ou muitos assuntos, e um livro pode ter um ou muitos autores.
+Em cada rota é possível fazer o processo de CRUD completo.
+
+- Schemas
+
+![Schema](https://github.com/alexjuniorarruda/livraria/assets/112874423/bd454e0a-a995-4dac-9716-f1146096fb93)
+
+- Rota Assuntos
+
+![Rota Assuntos](https://github.com/alexjuniorarruda/livraria/assets/112874423/9e110df9-1263-462a-b187-6c218fbc604b)
+
+- Rota Autores
+
+![Rota Autores](https://github.com/alexjuniorarruda/livraria/assets/112874423/f158e5b8-eb77-4868-9f31-cec95c71aaf0)
+
+- Rota Livros
+
+![Rota Livros](https://github.com/alexjuniorarruda/livraria/assets/112874423/54914569-4ecc-4775-b7a6-61df01e9c4e0)
+
+- Vale destacar também a rota **/livros/relatorio** onde é gerado um relatório contendo os livros cadastrados puxando da tabela livros relacionando com as tabelas assuntos e autores.
+
+![Relatorio Livros](https://github.com/alexjuniorarruda/livraria/assets/112874423/f1d49e41-7ef7-455b-8e3a-d0d0c5fd69f6)
+
 # Autor
 
 Alex Junior Arruda
