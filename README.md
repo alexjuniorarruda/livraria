@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/alexjuniorarruda/Accounts/blob/main/LICENSE)
 
- Nessa aplicação é possivel fazer o cadastro de livros referenciando os autores e os assuntos(um livro pode ter um ou mais de ambos). Abaixo explico um pouco mais da aplicação.
+ Nessa aplicação é possivel fazer o cadastro de livros referenciando os autores e os assuntos. Abaixo apresento um pouco mais desse projeto.
 
  ### Tecnologias Utilizadas
  
