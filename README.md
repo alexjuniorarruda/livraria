@@ -43,4 +43,8 @@ Para executar o projeto rodar o comando abaixo no terminal:
 npm run start
 ```
 
-Após rodar esse comando o banco e as tabelas serão criados, 
+Após rodar esse comando o banco e as tabelas serão criados, depois rodar o comando para popular o banco.
+
+```
+npx sequelize-cli db:seed:all
+```
