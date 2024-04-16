@@ -22,14 +22,16 @@
 
 ## Como rodar o projeto ✅
 
-Primeiramente fazer download do projeto, abrir o mesmo no terminal e executar o comando abaixo para instalar as dependências:
-
+- Fazer download do repositório
+- Abrir o projeto no terminal
+- Instalar as dependencias com o comando
+  
 ```
 npm install
 ```
 
-Depois renomear o arquivo .env.example para .env e inserir o **usuário**, **senha** e **endereço** para a criação do banco de dados, abaixo um exemplo de configuração do arquivo .env:
-
+- Renomear o arquivo .env.example para .env e colocar as sequintes informações (DB_USER, DB_PASSWORD e DB_HOST fica a critério)
+  
 ```
 DB_NAME=livrariadb
 DB_USER=root
@@ -37,14 +39,20 @@ DB_PASSWORD=root
 DB_HOST=localhost
 ```
 
-Para executar o projeto rodar o comando abaixo no terminal:
+- Criar o banco de dados com o comando
+  
+```
+npx sequelize-cli db:create
+```
 
+- Executar o projeto
+  
 ```
-npm run start
+npm start
 ```
 
-Após rodar esse comando o banco e as tabelas serão criados, depois rodar o comando para popular o banco.
+# Autor
 
-```
-npx sequelize-cli db:seed:all
-```
+Alex Junior Arruda
+
+https://www.linkedin.com/in/alex-jr-arruda/
