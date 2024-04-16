@@ -45,6 +45,12 @@ DB_HOST=localhost
 npx sequelize-cli db:create
 ```
 
+- Popular o banco através do Seed com o comando
+
+```
+npx sequelize-cli db:seed:all
+``` 
+
 - Executar o projeto
   
 ```
