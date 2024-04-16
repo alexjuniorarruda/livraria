@@ -19,3 +19,28 @@
  * pdfmake: 0.2.10
  * sequelize: 6.37.1
  * swagger-ui-express: 5.0.0
+
+## Como rodar o projeto ✅
+
+Primeiramente fazer download do projeto, abrir o mesmo no terminal e executar o comando abaixo para instalar as dependências:
+
+```
+npm install
+```
+
+Depois renomear o arquivo .env.example para .env e inserir o **usuário**, **senha** e **endereço** para a criação do banco de dados, abaixo um exemplo de configuração do arquivo .env:
+
+```
+DB_NAME=livrariadb
+DB_USER=root
+DB_PASSWORD=root
+DB_HOST=localhost
+```
+
+Para executar o projeto rodar o comando abaixo no terminal:
+
+```
+npm run start
+```
+
+Após rodar esse comando o banco e as tabelas serão criados, 
