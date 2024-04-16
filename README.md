@@ -64,7 +64,7 @@ npm start
 ![Doc Resumido](https://github.com/alexjuniorarruda/livraria/assets/112874423/80a63e5e-b41c-4dfa-af9b-5c3c87f366c4)
 
 A aplicação possui três rotas, **assuntos**, **autores** e **livros**. Para cadastrar o livros precisamos de pelo menos um assunto e um autor cadastrado.
-Se trata de uma relação **Many-to-Many**, onde um livro pode ter um ou muitos assuntos, e um livro pode ter um ou muitos autores.
+Se trata de uma relação **Many-to-Many**, onde um livro pode ter um ou muitos assuntos, e também pode ter um ou muitos autores.
 Em cada rota é possível fazer o processo de CRUD completo.
 
 - Schemas
