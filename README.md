@@ -59,7 +59,7 @@ npm start
 
 ## 📌 Rotas
 
-- Visão geral de toda a documentação
+- Visão geral de toda a [documentação](http://localhost:3000/api-docs/)
 
 ![Doc Resumido](https://github.com/alexjuniorarruda/livraria/assets/112874423/80a63e5e-b41c-4dfa-af9b-5c3c87f366c4)
 
