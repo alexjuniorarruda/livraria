@@ -83,7 +83,7 @@ Em cada rota é possível fazer o processo de CRUD completo.
 
 ![Rota Livros](https://github.com/alexjuniorarruda/livraria/assets/112874423/54914569-4ecc-4775-b7a6-61df01e9c4e0)
 
-- Vale destacar também a rota **/livros/relatorio** onde é gerado um relatório contendo os livros cadastrados puxando da tabela livros relacionando com as tabelas assuntos e autores.
+- Também é possível geradar um [relatório](http://localhost:3000/livros/relatorio) contendo os livros cadastrados puxando da tabela livros relacionando com as tabelas assuntos e autores.
 
 ![Relatorio Livros](https://github.com/alexjuniorarruda/livraria/assets/112874423/f1d49e41-7ef7-455b-8e3a-d0d0c5fd69f6)
 
